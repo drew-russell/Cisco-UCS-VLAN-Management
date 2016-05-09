@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>UCS VLAN Management</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="../static/css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="../static/assets/css/custom.min.css">
+    <!-- Custom styles for this template -->
+    <link href="../static/css/jumbotron-narrow.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="..static/bower_components/html5shiv/dist/html5shiv.js"></script>
+      <script src="..static./bower_components/respond/dest/respond.min.js"></script>
+    <![endif]-->
+    <script>
+
+     var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-23019901-1']);
+      _gaq.push(['_setDomainName', "bootswatch.com"]);
+        _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+     (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+
+    </script>
+  </head>
+  <body>
+
+
+    <div class="container">
+
+
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-header">
+          <h3 id="containers">Connect to UCS Manager</h3>
+        </div>
+        <div class="bs-component">
+          <div class="jumbotron">
+
+            <form action="" class="form-horizontal" method="POST">
+              <div style="display: none">
+              </div>
+              <div class="heading">
+
+              <br></br>
+              </div>
+
+              {% if error == "True" %}
+                <div class="form-group has-error">
+                  <label class="col-sm-4"for="ip_address">IP Address</label>
+                    <div class="col-sm-7">
+                        <input class="form-control" id="ip_address" name="ip_address" type="text"/>
+                    </div>
+                </div>
+
+                <div class="form-group has-error">
+                  <label class="col-sm-4" for="username">Username</label>
+                    <div class="col-sm-7">
+                        <input class="form-control" id="username" name="username" type="text" />
+                      </div>
+                </div>
+
+                <div class="form-group has-error">
+                  <label class="col-sm-4" for="password">Password</label>
+                    <div class="col-sm-7">
+                      <input class="form-control" id="password" name="password" type="password" />
+                    </div>
+                </div>
+                <br>
+              {% else %}
+                <div class="form-group">
+                  <label class="col-sm-4"for="ip_address">IP Address</label>
+                    <div class="col-sm-7">
+                        <input class="form-control" id="ip_address" name="ip_address" type="text"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-sm-4" for="username">Username</label>
+                    <div class="col-sm-7">
+                        <input class="form-control" id="username" name="username" type="text" />
+                      </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-sm-4" for="password">Password</label>
+                    <div class="col-sm-7">
+                      <input class="form-control" id="password" name="password" type="password" />
+                    </div>
+                </div>
+                <br>
+
+              {% endif %}
+
+              <div class="form-group">
+                <label class="col-sm-2" for=""></label>
+                <div class="col-sm-8">
+                  <button class="btn btn-primary  btn-block" type="submit">Connect</button>
+                </div>
+
+              </div>
+
+            </form>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="..static/assets/js/custom.js"></script>
+  </body>
+</html>

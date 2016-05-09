@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>UCS VLAN Management</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="../static/css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="../static/assets/css/custom.min.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
+      <script src="../bower_components/respond/dest/respond.min.js"></script>
+    <![endif]-->
+    <script>
+
+     var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-23019901-1']);
+      _gaq.push(['_setDomainName', "bootswatch.com"]);
+        _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+     (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+
+    </script>
+  </head>
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../" class="navbar-brand">Cisco UCS VLAN Management</a>
+
+
+        </div>
+
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="/vlans">VLAN</a></li>
+            <li><a href="/vnics" >vNIC</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="container">
+
+
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-header">
+          <h3 id="containers">Current Configured VLANs</h3>
+          <span class="label label-info">Connected to {{ip}}</span>
+        </div>
+        <div class="bs-component">
+          <div class="row">
+            <div class="col-md-6">
+
+              <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>VLAN Name</th>
+                      <th>ID</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    {% for name, ID in vlan.iteritems()  %}
+                      {% if name == new_vlan_name %}
+                        <tr class="success">
+                          <td >{{name}}</td>
+                          <td>{{ID}}</td>
+                        </tr>
+                        {% set new_vlan = "" %}
+                      {% else %}
+                        <tr>
+                          <td>{{name}}</td>
+                          <td>{{ID}}</td>
+                        </tr>
+                      {% endif %}
+                    {% endfor  %}
+
+                  </tbody>
+
+                </table>
+
+
+
+            </div>
+
+
+            <div class="col-md-6">
+              <label for="add new vlan">Add New VLANs</label>
+              <hr>
+              <form action="" class="form" method="POST">
+
+                <div class="row">
+                  <div class="col-xs-4">
+                    <input type="text" class="form-control" id="vlan-name" name="vlan-name" placeholder="VLAN Name">
+                  </div>
+
+                  <div class="col-xs-4">
+                    <input type="number" class="form-control" id="vlan-id" name="vlan-id" placeholder="ID">
+                  </div>
+
+                  <div class="col-xs-4">
+                    <button type="submit" class="btn  btn-success">Add VLAN</button>
+                  </div>
+
+                </div>
+              </form>
+
+
+            </div>
+          </div>
+      </div>
+    </div>
+
+
+
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../static/assets/js/custom.js"></script>
+  </body>
+</html>
