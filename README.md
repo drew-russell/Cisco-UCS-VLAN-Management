@@ -3,7 +3,7 @@
 A web interface built on Flask and the Cisco UCS Python SDK that has the
 following basic functionality:
 
-- Connect to a UCSM domain
+- Connect to a UCS domain
 - View and Add VLANs
 - Add a VLAN to a vNIC
 
